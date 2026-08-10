@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashraf M. ZAIDI — Embedded Systems Engineer</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg2: #f7f7f5;
+    --text: #111111;
+    --text2: #555555;
+    --text3: #999999;
+    --border: #e0e0e0;
+    --accent: #111111;
+    --nav-h: 56px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; z-index: 100; }
+  .nav-name { font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+  .nav-links a { font-size: 13px; color: var(--text2); text-decoration: none; transition: color .15s; }
+  .nav-links a:hover { color: var(--text); }
+  .lang-btn { font-size: 12px; font-weight: 600; border: 1px solid var(--border); background: none; cursor: pointer; padding: 4px 10px; border-radius: 4px; color: var(--text); letter-spacing: .06em; transition: background .15s; }
+  .lang-btn:hover { background: var(--bg2); }
+
+  /* SECTIONS */
+  section { padding: 5rem 0 4rem; border-bottom: 1px solid var(--border); }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text3); margin-bottom: 2rem; }
+
+  /* HERO */
+  #hero { padding-top: calc(var(--nav-h) + 5rem); padding-bottom: 5rem; }
+  .hero-inner { display: flex; align-items: flex-start; gap: 3rem; }
+  .hero-photo { width: 110px; height: 110px; border-radius: 12px; object-fit: cover; flex-shrink: 0; filter: grayscale(15%); }
+  .hero-text h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; letter-spacing: -.02em; margin-bottom: .5rem; }
+  .hero-text .title { font-size: 14px; color: var(--text2); margin-bottom: 1rem; font-weight: 400; }
+  .hero-text .intro { font-size: 15px; color: var(--text2); max-width: 540px; }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; }
+  .badge { font-size: 12px; font-weight: 500; background: var(--bg2); border: 1px solid var(--border); padding: 3px 10px; border-radius: 4px; color: var(--text2); }
+  .hero-cta { display: flex; gap: .75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .btn { font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 5px; text-decoration: none; transition: all .15s; }
+  .btn-primary { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
+  .btn-primary:hover { background: #333; }
+  .btn-ghost { background: none; color: var(--text); border: 1px solid var(--border); }
+  .btn-ghost:hover { background: var(--bg2); }
+
+  /* EXPERIENCE */
+  .exp-list { display: flex; flex-direction: column; gap: 2.5rem; }
+  .exp-item { display: grid; grid-template-columns: 110px 1fr; gap: 1.5rem; }
+  .exp-date { font-size: 12px; color: var(--text3); padding-top: 3px; line-height: 1.5; }
+  .exp-body h3 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+  .exp-body .company { font-size: 13px; color: var(--text2); margin-bottom: .75rem; }
+  .exp-body ul { padding-left: 1.1rem; color: var(--text2); font-size: 14px; display: flex; flex-direction: column; gap: .3rem; }
+  .exp-body .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .85rem; }
+  .tag { font-size: 11px; background: var(--bg2); border: 1px solid var(--border); padding: 2px 8px; border-radius: 3px; color: var(--text3); }
+  .stat-row { display: flex; gap: 2rem; margin-top: .75rem; }
+  .stat { font-size: 13px; }
+  .stat strong { font-weight: 700; color: var(--text); }
+
+  /* PROJECTS */
+  .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .proj-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+  .proj-card h3 { font-size: 14px; font-weight: 600; margin-bottom: .4rem; }
+  .proj-card p { font-size: 13px; color: var(--text2); line-height: 1.6; }
+  .proj-card .tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .85rem; }
+
+  /* SKILLS */
+  .skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem 2rem; }
+  .skill-row { display: flex; flex-direction: column; gap: .25rem; border-bottom: 1px solid var(--border); padding-bottom: .5rem; }
+  .skill-row .label { font-size: 12px; font-weight: 600; color: var(--text3); letter-spacing: .06em; text-transform: uppercase; }
+  .skill-row .value { font-size: 13px; color: var(--text2); }
+
+  /* EDUCATION */
+  .edu-list { display: flex; flex-direction: column; gap: 1.25rem; }
+  .edu-item { display: grid; grid-template-columns: 110px 1fr; gap: 1.5rem; }
+  .edu-date { font-size: 12px; color: var(--text3); padding-top: 2px; }
+  .edu-body h3 { font-size: 14px; font-weight: 600; }
+  .edu-body .school { font-size: 13px; color: var(--text2); }
+
+  /* CONTACT */
+  .contact-grid { display: flex; flex-direction: column; gap: .75rem; }
+  .contact-row { display: flex; align-items: center; gap: .75rem; font-size: 14px; }
+  .contact-row a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .contact-row a:hover { border-color: var(--text); }
+  .contact-icon { width: 20px; color: var(--text3); font-size: 16px; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--text3); }
+
+  /* LANG */
+  [data-lang="fr"] { display: none; }
+  body.fr [data-lang="en"] { display: none; }
+  body.fr [data-lang="fr"] { display: block; }
+  span[data-lang="fr"], span[data-lang="en"] { display: inline; }
+  body.fr span[data-lang="en"] { display: none; }
+  body.fr span[data-lang="fr"] { display: inline; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero-inner { flex-direction: column; gap: 1.5rem; }
+    .proj-grid { grid-template-columns: 1fr; }
+    .skill-grid { grid-template-columns: 1fr; }
+    .exp-item, .edu-item { grid-template-columns: 1fr; gap: .25rem; }
+    .exp-date, .edu-date { font-size: 11px; }
+    .nav-links a { display: none; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">A. ZAIDI</span>
+  <div class="nav-links">
+    <a href="#experience"><span data-lang="en">Experience</span><span data-lang="fr">Expérience</span></a>
+    <a href="#projects"><span data-lang="en">Projects</span><span data-lang="fr">Projets</span></a>
+    <a href="#skills"><span data-lang="en">Skills</span><span data-lang="fr">Compétences</span></a>
+    <a href="#contact">Contact</a>
+    <button class="lang-btn" onclick="toggleLang()">FR / EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <img src="photo_zaidi_rounded.png" alt="Ashraf M. ZAIDI" class="hero-photo">
+      <div class="hero-text">
+        <h1>Ashraf M. ZAIDI</h1>
+        <p class="title">
+          <span data-lang="en">Embedded Systems Engineer · V&amp;V · Test Automation</span>
+          <span data-lang="fr">Ingénieur Systèmes Embarqués · V&amp;V · Automatisation des Tests</span>
+        </p>
+        <p class="intro" data-lang="en">
+          2+ years building and validating embedded systems in the automotive sector — from bare-metal C firmware to Python CI/CD pipelines, from real-vehicle drive tests to custom test bench deployment.
+        </p>
+        <p class="intro" data-lang="fr">
+          2 ans d'expérience en développement firmware et validation de systèmes embarqués dans le secteur automobile — du C bare-metal aux pipelines CI/CD Python, des essais sur véhicule réel à la conception de bancs de test.
+        </p>
+        <div class="hero-badges">
+          <span class="badge">Python / pytest</span>
+          <span class="badge">C / C++</span>
+          <span class="badge">Jenkins / Docker</span>
+          <span class="badge">CAN / BLE / LoRaWAN</span>
+          <span class="badge">FreeRTOS</span>
+          <span class="badge">TOEIC 960</span>
+        </div>
+        <div class="hero-cta">
+          <a href="mailto:zaidimedh@gmail.com" class="btn btn-primary">
+            <span data-lang="en">Contact me</span><span data-lang="fr">Me contacter</span>
+          </a>
+          <a href="https://linkedin.com/in/zmashraf" target="_blank" class="btn btn-ghost">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label"><span data-lang="en">Experience</span><span data-lang="fr">Expérience</span></p>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-date">2023 – 2025</div>
+        <div class="exp-body">
+          <h3><span data-lang="en">Embedded Software &amp; Test Automation Engineer</span><span data-lang="fr">Ingénieur V&amp;V &amp; Automatisation des Tests</span></h3>
+          <p class="company">FORVIA — <span data-lang="en">Apprentice · Paris</span><span data-lang="fr">Alternance · Paris</span></p>
+          <ul data-lang="en">
+            <li>Designed and built automated test infrastructure (Python/pytest, Gherkin/BDD, Jenkins, Docker, ADB) for IVI systems (McLaren, Stellantis)</li>
+            <li>Real-vehicle drive tests (Volvo, DAB/DAB+); ECU flashing (engine, ABS, airbag); CAN bus simulation</li>
+            <li>Designed portable test bench deployed at McLaren + standalone ECU flashing device; BOM, wiring, deployment</li>
+            <li>Wrote V&amp;V specifications, test reports, anomaly tracking; trained production teams on custom tooling</li>
+            <li>Collaborated with international teams in India and Malaysia</li>
+          </ul>
+          <ul data-lang="fr">
+            <li>Conception d'une infrastructure de tests automatisés (Python/pytest, Gherkin/BDD, Jenkins, Docker, ADB) pour systèmes IVI (McLaren, Stellantis)</li>
+            <li>Drive tests sur véhicule réel (Volvo, DAB/DAB+) ; flashage ECU (moteur, ABS, airbag) ; simulation CAN</li>
+            <li>Conception d'un banc de test portable déployé chez McLaren + boîtier de flashage autonome ; BOM, câblage</li>
+            <li>Rédaction spécifications V&amp;V, rapports de tests, suivi anomalies ; formation des équipes production</li>
+            <li>Collaboration internationale (Inde, Malaisie)</li>
+          </ul>
+          <div class="stat-row">
+            <div class="stat"><strong>+25%</strong> <span data-lang="en">test coverage</span><span data-lang="fr">couverture tests</span></div>
+            <div class="stat"><strong>−40%</strong> <span data-lang="en">validation time</span><span data-lang="fr">temps de validation</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">pytest</span><span class="tag">Jenkins</span>
+            <span class="tag">Docker</span><span class="tag">C++/Qt</span><span class="tag">ADB</span>
+            <span class="tag">CAN</span><span class="tag">Android Automotive</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2025 – 2026</div>
+        <div class="exp-body">
+          <h3><span data-lang="en">Industrial Project Manager</span><span data-lang="fr">Chargé de Projet Industriel</span></h3>
+          <p class="company">FORVIA — <span data-lang="en">Internship · Paris</span><span data-lang="fr">Stage · Paris</span></p>
+          <ul data-lang="en">
+            <li>Project coordination, milestone &amp; deliverable tracking, QCD reporting</li>
+            <li>Business plan updates for board and client approvals</li>
+            <li>Cross-team coordination in an international environment</li>
+          </ul>
+          <ul data-lang="fr">
+            <li>Pilotage de projets, suivi des jalons et livrables, reporting QCD</li>
+            <li>Mise à jour des business plans financiers (board et clients en acquisition)</li>
+            <li>Coordination inter-équipes en environnement international</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Jira</span><span class="tag">Excel</span><span class="tag">ProMISE</span><span class="tag">QCD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2023</div>
+        <div class="exp-body">
+          <h3><span data-lang="en">Electrical Inspection Engineer</span><span data-lang="fr">Ingénieur Inspection Électrique</span></h3>
+          <p class="company">Bureau Veritas — <span data-lang="en">Apprentice · Île-de-France</span><span data-lang="fr">Alternance · Île-de-France</span></p>
+          <ul data-lang="en">
+            <li>Regulatory electrical inspections (initial, periodic, Q18, 4-year) on tertiary sites — buildings, labs, train stations</li>
+            <li>Inspection report writing, non-conformity identification</li>
+          </ul>
+          <ul data-lang="fr">
+            <li>Vérifications électriques réglementaires (initiale, périodique, Q18, quadriennale) sur sites tertiaires</li>
+            <li>Rédaction des rapports d'inspection, identification des non-conformités</li>
+          </ul>
+          <div class="tags">
+            <span class="tag"><span data-lang="en">Electrical Safety BE Essais</span><span data-lang="fr">Habilitation BE Essais</span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label"><span data-lang="en">Personal Projects</span><span data-lang="fr">Projets Personnels</span></p>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <h3>CAN Sniffer</h3>
+        <p data-lang="en">Passive CAN bus capture tool. C++ firmware on Arduino Mega (MCP2515/SPI, 500 kbps listen-only), Python host app with frame parsing, ID filtering and CSV logging. pytest suite + Jenkins CI pipeline.</p>
+        <p data-lang="fr">Outil de capture passive du bus CAN. Firmware C++ sur Arduino Mega (MCP2515/SPI, 500 kbps listen-only), app Python avec parsing, filtrage ID et logging CSV. Suite pytest + pipeline CI Jenkins.</p>
+        <div class="tags">
+          <span class="tag">C++</span><span class="tag">Python</span><span class="tag">CAN</span><span class="tag">SPI</span><span class="tag">pytest</span><span class="tag">Jenkins</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <h3>ADB Automate</h3>
+        <p data-lang="en">Android UI automation framework via ADB. Modular Python architecture, XML UI parser, screen-state detection via dumpsys, thread-safe watchdog daemon. 377 pytest tests (78% coverage), Docker multi-stage, Jenkins pipeline.</p>
+        <p data-lang="fr">Framework d'automatisation UI Android via ADB. Architecture Python modulaire, parseur UI XML, détection d'état via dumpsys, watchdog thread-safe. 377 tests pytest (78% couverture), Docker multi-stage, Jenkins.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">ADB</span><span class="tag">pytest</span><span class="tag">Docker</span><span class="tag">Jenkins</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <h3>Open Ruche</h3>
+        <p data-lang="en">LoRaWAN telemetry for connected beehives. Ultra-low-power design (LiPo + solar, deep sleep ESP32, TPL5110). 6+ months field-validated. Sensor calibration (HX711, DHT22), MQTT/REST cloud integration.</p>
+        <p data-lang="fr">Télémétrie LoRaWAN pour ruches connectées. Architecture ultra-basse consommation (LiPo + solaire, deep sleep ESP32, TPL5110). Validation terrain 6 mois. Calibration capteurs (HX711, DHT22), intégration MQTT/REST.</p>
+        <div class="tags">
+          <span class="tag">ESP32</span><span class="tag">LoRaWAN</span><span class="tag">C/C++</span><span class="tag">Python</span><span class="tag">MQTT</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <h3>ProAdapt</h3>
+        <p data-lang="en">IoT wearable for amputee runners. ESP32/FreeRTOS low-power architecture, multi-sensor acquisition (IMU MPU6050, pressure, flex), BLE stack implementation. Field-validated — 8h autonomy target achieved.</p>
+        <p data-lang="fr">Wearable IoT pour coureurs amputés. ESP32/FreeRTOS low-power, acquisition multisensorielle (IMU MPU6050, pression, flexion), stack BLE. Validé terrain — objectif 8h d'autonomie atteint.</p>
+        <div class="tags">
+          <span class="tag">ESP32</span><span class="tag">FreeRTOS</span><span class="tag">BLE</span><span class="tag">C/C++</span><span class="tag">IMU</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <h3>ArrowMind</h3>
+        <p data-lang="en">Real-time educational game on LPC1769 (ARM Cortex-M3) / FreeRTOS. Priority scheduling, semaphores, message queues. Deterministic latency &lt; 50ms validated, CPU load tested.</p>
+        <p data-lang="fr">Jeu éducatif temps réel sur LPC1769 (ARM Cortex-M3) / FreeRTOS. Ordonnancement prioritaire, sémaphores, files de messages. Latence déterministe &lt; 50ms validée, tests de charge CPU.</p>
+        <div class="tags">
+          <span class="tag">C (CMSIS/HAL)</span><span class="tag">FreeRTOS</span><span class="tag">ARM Cortex-M3</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label"><span data-lang="en">Skills</span><span data-lang="fr">Compétences</span></p>
+    <div class="skill-grid">
+      <div class="skill-row">
+        <span class="label"><span data-lang="en">Languages</span><span data-lang="fr">Langages</span></span>
+        <span class="value">C, C++, Python, Bash, SQL</span>
+      </div>
+      <div class="skill-row">
+        <span class="label"><span data-lang="en">Embedded platforms</span><span data-lang="fr">Plateformes embarquées</span></span>
+        <span class="value">ESP32, STM32, NXP LPC1769, Raspberry Pi, FreeRTOS</span>
+      </div>
+      <div class="skill-row">
+        <span class="label"><span data-lang="en">Protocols</span><span data-lang="fr">Protocoles</span></span>
+        <span class="value">CAN, UART, SPI, I2C, BLE, LoRaWAN, ADB, MQTT, TCP/IP</span>
+      </div>
+      <div class="skill-row">
+        <span class="label">V&amp;V / QA</span>
+        <span class="value">pytest, Gherkin/BDD, <span data-lang="en">test plans, anomaly tracking, V&V reports</span><span data-lang="fr">plans de validation, suivi anomalies, rapports V&V</span></span>
+      </div>
+      <div class="skill-row">
+        <span class="label">DevOps / CI-CD</span>
+        <span class="value">Jenkins, Docker, Git / GitHub, Linux</span>
+      </div>
+      <div class="skill-row">
+        <span class="label"><span data-lang="en">Debug</span><span data-lang="fr">Mesure</span></span>
+        <span class="value"><span data-lang="en">Oscilloscope, logic analyzer, multimeter</span><span data-lang="fr">Oscilloscope, analyseur logique, multimètre</span></span>
+      </div>
+      <div class="skill-row">
+        <span class="label"><span data-lang="en">Project management</span><span data-lang="fr">Gestion de projet</span></span>
+        <span class="value">Jira, Confluence, Excel, Agile, QCD</span>
+      </div>
+      <div class="skill-row">
+        <span class="label"><span data-lang="en">Languages spoken</span><span data-lang="fr">Langues parlées</span></span>
+        <span class="value"><span data-lang="en">French (native) · English (TOEIC 960) · Arabic (native)</span><span data-lang="fr">Français (maternel) · Anglais (TOEIC 960) · Arabe (maternel)</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <p class="section-label"><span data-lang="en">Education</span><span data-lang="fr">Formation</span></p>
+    <div class="edu-list">
+      <div class="edu-item">
+        <div class="edu-date">2024 – 2026</div>
+        <div class="edu-body">
+          <h3>Master 2 — MBA</h3>
+          <p class="school">Sorbonne Business School · Paris</p>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-date">2022 – 2025</div>
+        <div class="edu-body">
+          <h3><span data-lang="en">Engineering Degree — Industrial Computer Science</span><span data-lang="fr">Diplôme d'Ingénieur — Informatique Industrielle</span></h3>
+          <p class="school">Polytech Sorbonne · Paris</p>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-date">2020 – 2022</div>
+        <div class="edu-body">
+          <h3><span data-lang="en">Bachelor's — Electronics, EE &amp; Automation</span><span data-lang="fr">Licence — Électronique, Énergie Électrique et Automatique</span></h3>
+          <p class="school">Sorbonne Université · Paris</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <div class="contact-grid">
+      <div class="contact-row">
+        <span class="contact-icon">✉</span>
+        <a href="mailto:zaidimedh@gmail.com">zaidimedh@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">☎</span>
+        <span>+33 6 20 38 67 64</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">in</span>
+        <a href="https://linkedin.com/in/zmashraf" target="_blank">linkedin.com/in/zmashraf</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">📍</span>
+        <span>Noisiel (77), Île-de-France</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Ashraf M. ZAIDI · <span data-lang="en">Available immediately</span><span data-lang="fr">Disponible immédiatement</span></p>
+</footer>
+
+<script>
+  function toggleLang() {
+    document.body.classList.toggle('fr');
+    const isFr = document.body.classList.contains('fr');
+    document.querySelector('.lang-btn').textContent = isFr ? 'EN' : 'FR';
+    document.documentElement.lang = isFr ? 'fr' : 'en';
+  }
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : '';
+      a.style.fontWeight = a.getAttribute('href') === '#' + current ? '600' : '';
+    });
+  });
+</script>
+</body>
+</html>
