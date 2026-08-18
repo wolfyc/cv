@@ -96,7 +96,7 @@
   [data-lang="fr"] { display: none; }
   body.fr [data-lang="en"] { display: none; }
   body.fr [data-lang="fr"] { display: block; }
-  span[data-lang="fr"], span[data-lang="en"] { display: inline; }
+  span[data-lang="en"] { display: inline; }
   body.fr span[data-lang="en"] { display: none; }
   body.fr span[data-lang="fr"] { display: inline; }
 
@@ -168,6 +168,35 @@
   <div class="container">
     <p class="section-label"><span data-lang="en">Experience</span><span data-lang="fr">Expérience</span></p>
     <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-date"><span data-lang="en">Mar 2026 – Present</span><span data-lang="fr">Mars 2026 – Présent</span></div>
+        <div class="exp-body">
+          <h3><span data-lang="en">Founder &amp; Full-Stack Developer</span><span data-lang="fr">Fondateur &amp; Développeur Full-Stack</span></h3>
+          <p class="company">Hrfly — <span data-lang="en">Founder · Île-de-France</span><span data-lang="fr">Fondateur · Île-de-France</span></p>
+          <ul data-lang="en">
+            <li>Founded Hrfly, an automotive ECU repair &amp; key programming business (Île-de-France), pairing two complementary technical trades — electronics diagnostics and automotive locksmithing — under one brand</li>
+            <li>ECU diagnostics &amp; repair on test bench: component-level fault diagnosis and repair, board-level reverse engineering, ECU cloning, FAP/DPF and EGR software solutions, decat programming</li>
+            <li>Automotive key &amp; immobilizer programming: key addition, all-keys-lost recovery, key duplication, immobilizer reset</li>
+            <li>Built the go-to-market positioning around client pain points — emergency response for lockouts/breakdowns, insurance-covered billing to lower the price barrier, and strict ID/proof-of-ownership checks for anti-theft compliance</li>
+            <li>Structured service delivery across Île-de-France (on-site) plus nationwide reach via postal shipping, with a multilingual (FR/EN/AR), multi-channel (TikTok, WhatsApp, Snapchat) acquisition strategy</li>
+          </ul>
+          <ul data-lang="fr">
+            <li>Création de Hrfly, entreprise de réparation de calculateurs automobiles (ECU) et de programmation de clés (Île-de-France), réunissant deux compétences techniques complémentaires — électronique automobile et serrurerie automobile — sous une même marque</li>
+            <li>Diagnostic et réparation de calculateurs sur banc de test : diagnostic et réparation de composants, reverse engineering au niveau carte électronique, clonage de calculateur, solutions logicielles FAP/DPF et EGR, décatalyseur</li>
+            <li>Programmation de clés et antidémarrage : ajout de clé, gestion "toutes clés perdues", duplication, remise à zéro d'immobilisateur</li>
+            <li>Construction du positionnement commercial autour des irritants clients — réponse à l'urgence (porte claquée, panne immobilisante), facturation prise en charge par l'assurance pour lever le frein prix, et vérification stricte d'identité/carte grise pour la conformité anti-vol</li>
+            <li>Organisation du service sur l'Île-de-France (intervention sur site) avec couverture nationale par envoi postal, et stratégie d'acquisition multilingue (FR/EN/AR) et multi-canal (TikTok, WhatsApp, Snapchat)</li>
+          </ul>
+          <div class="tags">
+            <span class="tag"><span data-lang="en">ECU Repair</span><span data-lang="fr">Réparation ECU</span></span>
+            <span class="tag"><span data-lang="en">Test Bench</span><span data-lang="fr">Banc de test</span></span>
+            <span class="tag"><span data-lang="en">Reverse Engineering</span><span data-lang="fr">Reverse Engineering</span></span>
+            <span class="tag"><span data-lang="en">Key Programming</span><span data-lang="fr">Programmation clés</span></span>
+            <span class="tag"><span data-lang="en">Entrepreneurship</span><span data-lang="fr">Entrepreneuriat</span></span>
+          </div>
+        </div>
+      </div>
 
       <div class="exp-item">
         <div class="exp-date">2023 – 2025</div>
@@ -249,6 +278,15 @@
   <div class="container">
     <p class="section-label"><span data-lang="en">Personal Projects</span><span data-lang="fr">Projets Personnels</span></p>
     <div class="proj-grid">
+
+      <div class="proj-card">
+        <h3>Hrfly — <span data-lang="en">Business Website</span><span data-lang="fr">Site Web d'Entreprise</span></h3>
+        <p data-lang="en">Production website for Hrfly (automotive ECU repair &amp; key programming, see Experience). Next.js 14 App Router / TypeScript strict, 3 lead-gen forms with Zod server validation, trilingual FR/EN/AR with full RTL support via next-intl (~260 natively-written content keys/language), custom brand identity &amp; design system, Resend email pipeline. Found and fixed an HTML-injection vulnerability. Deployed on Vercel with CI/CD from GitHub.</p>
+        <p data-lang="fr">Site de production pour Hrfly (réparation calculateurs ECU &amp; programmation de clés, voir Expérience). Next.js 14 App Router / TypeScript strict, 3 formulaires métier avec validation serveur Zod, trilingue FR/EN/AR avec support RTL complet via next-intl (~260 clés de contenu rédigées nativement par langue), identité de marque &amp; design system sur mesure, pipeline d'emails Resend. Identification et correction d'une faille d'injection HTML. Déployé sur Vercel avec CI/CD depuis GitHub.</p>
+        <div class="tags">
+          <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span><span class="tag">next-intl</span><span class="tag">Zod</span><span class="tag">Resend</span><span class="tag">Vercel</span>
+        </div>
+      </div>
 
       <div class="proj-card">
         <h3>CAN Sniffer</h3>
