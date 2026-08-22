@@ -40,6 +40,8 @@
   .hero-text h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; letter-spacing: -.02em; margin-bottom: .5rem; }
   .hero-text .title { font-size: 14px; color: var(--text2); margin-bottom: 1rem; font-weight: 400; }
   .hero-text .intro { font-size: 15px; color: var(--text2); max-width: 540px; }
+  .status-pill { display: inline-flex; align-items: center; gap: .45rem; font-size: 13px; font-weight: 600; padding: 5px 12px 5px 10px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; margin-bottom: 1rem; }
+  .status-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: #2563eb; flex-shrink: 0; }
   .hero-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; }
   .badge { font-size: 12px; font-weight: 500; background: var(--bg2); border: 1px solid var(--border); padding: 3px 10px; border-radius: 4px; color: var(--text2); }
   .hero-cta { display: flex; gap: .75rem; margin-top: 1.5rem; flex-wrap: wrap; }
@@ -138,6 +140,11 @@
           <span data-lang="en">Embedded Systems Engineer · V&amp;V · Test Automation</span>
           <span data-lang="fr">Ingénieur Systèmes Embarqués · V&amp;V · Automatisation des Tests</span>
         </p>
+        <div class="status-pill">
+          <span class="dot"></span>
+          <span data-lang="en">Open to opportunities · Mobile France &amp; Europe</span>
+          <span data-lang="fr">Ouvert aux opportunités · Mobile France &amp; Europe</span>
+        </div>
         <p class="intro" data-lang="en">
           2+ years building and validating embedded systems in the automotive sector — from bare-metal C firmware to Python CI/CD pipelines, from real-vehicle drive tests to custom test bench deployment.
         </p>
@@ -444,7 +451,7 @@
 </section>
 
 <footer>
-  <p>Ashraf Mohamed ZAIDI · <span data-lang="en">Available immediately</span><span data-lang="fr">Disponible immédiatement</span></p>
+  <p>Ashraf Mohamed ZAIDI · <span data-lang="en">Available immediately · Mobile across France &amp; Europe</span><span data-lang="fr">Disponible immédiatement · Mobile en France &amp; en Europe</span></p>
 </footer>
 
 <script>
